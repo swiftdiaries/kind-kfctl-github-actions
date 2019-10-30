@@ -19,6 +19,6 @@ jobs:
       run: |
         curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v0.5.1/kind-Linux-amd64
         chmod +x ./kind
-        mv ./kind /usr/local/bin/kind
+        export PATH=${PATH}:$(pwd)/kind
     - name: Check KinD version
       run: kind version
